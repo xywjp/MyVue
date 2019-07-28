@@ -8,16 +8,13 @@
     </Head>
     <body>
         <div id="vue-app">
-            <h1> Events </h1>
-            <button v-on:click.once="addage">长一岁</button>
-            <button @click="subtractage">减一岁</button>
-            <button v-on:dblclick="addage">长一岁</button>
-            <button @dblclick="subtractage">减一岁</button>
-            <p>My age is {{age}}</p>
-            <div id="canvas" v-on:mousemove="updateXY">
-                {{x}},{{y}} -<span v-on:mousemove.stop="">Stop Moving</span>
-            </div>
-            <a v-on:click.prevent="alert()" href="https://www.github.com">The new step</a>  
+            <h1> 双向数据绑定 </h1>
+            <label>姓名：</label>
+            <input ref="name" type="text" v-model="name">
+            <sqpa> {{name}} </span>
+            <label>年龄：</label>
+            <input ref="age" type="text" v-on:keyup.enter="inputage">
+            <span> {{age}} </span>
         </div>
         <script src="app.js"></script>
     </body>

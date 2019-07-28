@@ -1,27 +1,15 @@
 new Vue({
     el:"#vue-app",
     data:{
-        age:21,
-        x:0,
-        y:0
+        name:"",
+        age:""
     },
     methods:{
-        addage:function(){
-            this.age++;
+        inputname:function(){
+            this.name=this.$refs.name.value;
         },
-        subtractage:function(){
-            this.age--;
-        },
-        updateXY:function(event){
-            //console.log(event);
-            this.x=event.offsetX;
-            this.y=event.offsetY;
-        },
-        StopMoving:function(event){
-            event.stopPropagation();
-        },
-        alert:function(){
-            alert("Hellow World !");
+        inputage:function(){
+            this.age=this.$refs.age.value;
         }
     }
 });
