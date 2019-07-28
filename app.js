@@ -1,14 +1,27 @@
 new Vue({
     el:"#vue-app",
     data:{
-        name:"王景鹏",
-        job:"Web开发",
-        website:"https://baidu.com",
-        websitetag:"<a href='https://baidu.com'>百度page</a>"
+        age:21,
+        x:0,
+        y:0
     },
     methods:{
-        greet: function(time){
-            return 'Good '+time +this.name + ' !';
+        addage:function(){
+            this.age++;
+        },
+        subtractage:function(){
+            this.age--;
+        },
+        updateXY:function(event){
+            //console.log(event);
+            this.x=event.offsetX;
+            this.y=event.offsetY;
+        },
+        StopMoving:function(event){
+            event.stopPropagation();
+        },
+        alert:function(){
+            alert("Hellow World !");
         }
     }
 });

@@ -8,12 +8,16 @@
     </Head>
     <body>
         <div id="vue-app">
-            <h1> {{ greet('Afternoon ') }} </h1>
-            <p> {{ name }} </p>
-            <p> {{ job }} </p>
-            <a v-bind:href="website">百度page</a>
-            <input type="text" v-bind:value="name">
-            <p v-html="websitetag"></p>
+            <h1> Events </h1>
+            <button v-on:click.once="addage">长一岁</button>
+            <button @click="subtractage">减一岁</button>
+            <button v-on:dblclick="addage">长一岁</button>
+            <button @dblclick="subtractage">减一岁</button>
+            <p>My age is {{age}}</p>
+            <div id="canvas" v-on:mousemove="updateXY">
+                {{x}},{{y}} -<span v-on:mousemove.stop="">Stop Moving</span>
+            </div>
+            <a v-on:click.prevent="alert()" href="https://www.github.com">The new step</a>  
         </div>
         <script src="app.js"></script>
     </body>
