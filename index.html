@@ -8,19 +8,11 @@
     </Head>
     <body>
         <div id="vue-app">
-            <h1> 动态 CSS Class </h1>
-            <h2>事例1</h2>
-            <!-- <div v-on:click="changeColor=!changeColor"
-             v-bind:class="{changeColor:changeColor}">
-                <span>Tony</span>
-            </div> -->
-            <h2>事例2</h2>
-            <button v-on:click="changeColor=!changeColor">Change Color</button>
-            <button v-on:click="changeLength=!changeLength">Change Length</button>
-            <div v-bind:class="compClasses">
-                <span>Tony</span>
-            </div>
-
+            <h1>v-if</h1>
+            <button v-on:click="error=!error">Toggel Error</button>
+            <button v-on:click="success=!success">Toggel Success</button>
+            <p v-if="error">出现错误：404</p>
+            <p v-else-if="success">连接成功</p>
         </div>
         <script src="app.js"></script>
     </body>
